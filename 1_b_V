@@ -1,0 +1,15 @@
+with open("dict.txt") as fp:
+    lines = fp.readlines()
+
+array = []
+for i in lines:
+    ins = i.replace('\n', '')
+    a, b = ins.split(' ')
+
+    array.append(a)
+    array.append(b)
+    print(a + " " + b)
+
+print(len(set(array)))
+
+// 42
