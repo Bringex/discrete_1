@@ -19,7 +19,7 @@ print(len(lines)) # 82
 
 
 
-# 3
+# 3 and 4
 arrayDeg = [0] * 50
 
 for i in lines:
@@ -36,4 +36,3 @@ for i in arrayDeg:
 
 
 
-# 4
