@@ -184,4 +184,6 @@ print(dnx.maximum_independent_set(G, sampler), end=" ")
 print(" : len = " + str(len(dnx.maximum_independent_set(G, sampler))))
 
 
-
+print("(nx)Maximum matching")
+print(nx.max_weight_matching(G), end="")
+print(" : len = " + str(len(nx.max_weight_matching(G))))
