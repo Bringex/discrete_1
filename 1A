@@ -193,3 +193,5 @@ print("(nx)Minimum vertex cover")
 sampler = dimod.SimulatedAnnealingSampler()
 print(dnx.min_vertex_cover(G, sampler))
 
+print("(nx)Minimum edge cover")
+print(nx.min_edge_cover(G))
