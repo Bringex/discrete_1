@@ -123,8 +123,8 @@ G.add_edge(42,43)
 G.add_edge(42,15)
 
 # check Count Vertex and Edges:
-print("E = " + str(G.number_of_nodes()))
-print("V = " + str(G.number_of_edges()))
+print("(nx)E = " + str(G.number_of_nodes()))
+print("(nx)V = " + str(G.number_of_edges()))
 
 list = nx.center(G)
 
@@ -155,8 +155,7 @@ diam = max(exentr)
 print("radius: " + str(radius) + ", diam: " + str(diam))
 
 # Проверка библиотекой networkx:
-print("check")
-print("radius: " + str(nx.radius(G)) + ", diam: " + str(nx.diameter(G)))
+print("(nx)radius: " + str(nx.radius(G)) + ", diam: " + str(nx.diameter(G)))
 
 
 # Найдём center(G):
@@ -168,6 +167,21 @@ for i in range(len(listo)):
                 listCenter.append(i + 1)
 print("center:", end =" ")
 print(listCenter)
-print("check")
-print("center: " + str(nx.center(G)))
+print("(nx)center: " + str(nx.center(G)))
+
+#print(nx.equitable_color(G, 2))
+print("(nx)All cliques:")
+print(nx.cliques_containing_node(G))
+
+
+
+# https://docs.ocean.dwavesys.com/en/stable/docs_dnx/reference/algorithms/generated/dwave_networkx.maximum_independent_set.html
+import dimod
+import dwave_networkx as dnx
+sampler = dimod.SimulatedAnnealingSampler()
+print("(nx)Maximum stable set:")
+print(dnx.maximum_independent_set(G, sampler), end=" ")
+print(" : len = " + str(len(dnx.maximum_independent_set(G, sampler))))
+
+
 
