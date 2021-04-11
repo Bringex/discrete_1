@@ -68,6 +68,5 @@ G.add_edge(40,42)
 G.add_edge(41,42)
 G = G.to_undirected()
 tree = sage.graphs.connectivity.spqr_tree(G)
-tree2 = sage.graphs.connectivity.spqr_tree_to_graph(tree)
 
 plot(tree)
