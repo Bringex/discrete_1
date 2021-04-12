@@ -1,4 +1,5 @@
 import networkx as nx
+from networkx.algorithms import tree
 
 G=nx.Graph()
 G.add_edge(1,2, weight=326)
@@ -76,3 +77,8 @@ G.add_edge(15,43,weight=200)
 G.add_edge(16,43,weight=500)
 G.add_edge(42,43,weight=1100)
 G.add_edge(42,15,weight=1000)
+
+
+edgelist = list(tree.maximum_spanning_edges(G, algorithm="kruskal", data=False))
+
+print(edgelist)
